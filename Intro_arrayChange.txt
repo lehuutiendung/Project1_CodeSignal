@@ -1,0 +1,15 @@
+int arrayChange(std::vector<int> inputArray) {
+    int cnt =0;
+    int temp;
+    for(int i=0;i<inputArray.size()-1;i++){
+        temp = inputArray[i+1];
+        if(inputArray[i]>=temp){
+            while(inputArray[i]>=temp){
+                temp++;
+                inputArray[i+1]=temp;
+                cnt++;
+            }
+        }
+    }
+    return cnt++;
+}

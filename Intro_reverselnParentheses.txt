@@ -1,0 +1,20 @@
+std::string reverseInParentheses(std::string inputString) {
+std::stack<int> S;
+    for(int i=0;i<inputString.length();i++){
+        if(inputString[i] == '('){
+            S.push(i);
+        }
+        if(inputString[i] == ')'){
+            int temp = S.top();
+            S.pop();
+            reverse(inputString.begin() + temp, inputString.begin() + i);
+        }
+    }
+    std::string ans;
+    for(int i=0;i<inputString.length();i++){
+        if(inputString[i] != '(' && inputString[i] != ')'){
+            ans += inputString[i];
+        }
+    }
+    return ans;
+}

@@ -1,0 +1,19 @@
+bool isLucky(int n) {
+    string str = to_string(n);
+    string lStr,rStr;
+    for(int i=0; i <str.length()/2;i++){
+        lStr += str[i];
+    }
+    for(int i=str.length()/2; i<str.length();i++){
+        rStr += str[i];
+    }
+    int sumL=0,sumR=0;
+    for(int i=0;i<lStr.length();i++){
+        sumL+=(int)(lStr[i] - 48);
+    } 
+    for(int i=0;i<rStr.length();i++){
+        sumR+=(int)(rStr[i] - 48);
+    }
+    if(sumL == sumR) return true;
+    return false;
+}

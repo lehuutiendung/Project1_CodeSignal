@@ -1,0 +1,16 @@
+bool almostIncreasingSequence(std::vector<int> sequence) {
+    int count = 0;
+    int max = -99999;
+    for (int i=0;i<sequence.size();i++){
+        if(sequence[i] > max) max=sequence[i];
+        else{
+            if(i==1) max = sequence[i];
+            else if((i-2) >= 0 && sequence[i] > sequence[i-2]) {
+                max= sequence[i];
+            }
+            count++;
+        }
+    }
+    if(count<=1) return true;
+    return false;
+}

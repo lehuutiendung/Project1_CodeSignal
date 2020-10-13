@@ -1,0 +1,17 @@
+std::vector<int> sortByHeight(std::vector<int> a) {
+    std::vector<int> arr;
+    for(int i=0;i<a.size();i++){
+        if(a[i]!=-1){
+            arr.push_back(a[i]);
+        }
+    }
+    sort(arr.begin(),arr.end());
+    int count = 0;
+    for(int i=0; i<a.size();i++){
+        if(a[i]!=-1){
+            a[i] = arr[count];
+            count++;
+        }
+    }
+    return a;
+}

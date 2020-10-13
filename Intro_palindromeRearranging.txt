@@ -1,0 +1,15 @@
+bool palindromeRearranging(std::string inputString) {
+    int cnt = 0; 
+    bool check = false;
+    for(int i=0;i<26;i++){
+        char c = 'a' + i;
+        cnt = count(inputString.begin(),inputString.end(), c);
+        if(cnt % 2 ==0 ) 
+            continue;
+        if(check == true){
+            return false;
+        }
+        check = true;
+    }
+    return true;
+}

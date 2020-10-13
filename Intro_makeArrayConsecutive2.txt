@@ -1,0 +1,8 @@
+
+int makeArrayConsecutive2(std::vector<int> statues) {
+    sort(statues.begin(),statues.end());
+    int cout = 0;
+    if (statues.size()==1 ) return 0;
+    cout = statues.back() - statues.front() + 1;
+    return cout - statues.size();
+}

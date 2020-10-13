@@ -1,0 +1,9 @@
+int arrayMaximalAdjacentDifference(std::vector<int> inputArray) {
+    int max = abs(inputArray[0] - inputArray[1]);
+    for(int i=1;i<inputArray.size()-1;i++){
+        if(abs(inputArray[i]-inputArray[i+1]) > max ) {
+            max = abs(inputArray[i] - inputArray[i+1]);
+        }
+    }
+    return max;
+}
