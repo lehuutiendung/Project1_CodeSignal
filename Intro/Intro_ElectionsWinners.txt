@@ -1,0 +1,21 @@
+int electionsWinners(std::vector<int> votes, int k) {
+    int cnt = 0; 
+    int max = *max_element(votes.begin(),votes.end());
+    if(k==0){
+        for(int i=0;i<votes.size();i++){
+            if(votes[i] == max){
+                cnt++;
+            }
+        }
+        if(cnt > 1) return 0;
+        else return 1;
+    }
+    else{
+        int temp = 0;
+        for(int i=0;i<votes.size();i++){
+            int b = votes[i] + k;
+            if(b > max) temp++;
+        }
+        return temp ;
+    }
+}

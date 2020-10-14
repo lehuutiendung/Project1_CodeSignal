@@ -1,0 +1,15 @@
+int chessKnight(std::string cell) {
+    int x = cell[0] - 'a';
+    int y = cell[1] - '1';
+    int posx[8]={1,2,2,1,-1,-2,-2,-1};
+    int posy[8]={2,1,-1,-2,-2,-1,1,2};
+    int ans = 0;
+    for(int i=0;i<8;i++){
+        int nx = x + posx[i];
+        int ny = y + posy[i];
+        if( 0 <= nx && nx <=7 && 0<=ny && ny<=7  ){
+            ans++;
+        }
+    }
+    return ans;
+}

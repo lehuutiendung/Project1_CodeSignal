@@ -1,0 +1,27 @@
+std::vector<std::vector<int>> spiralNumbers(int n) {
+    std::vector<std::vector<int>> a(n, std::vector<int>(n));
+    int top = 0, right = n-1, down = n - 1, left = 0, d = 1;
+    while(d<=n*n){
+        for(int i = left; i<=right; i++){
+            a[top][i] = d++;
+        }
+        top++;
+        
+        for(int i = top; i<= down; i++){
+            a[i][right] = d++;
+        }
+        right--;
+        
+        for(int i = right; i>= left; i--){
+            a[down][i] = d++;
+        }
+        down--;
+        
+        for(int i = down; i>= top; i--){
+            a[i][left] = d++;
+        }
+        left++;
+        
+    }
+    return a;
+}

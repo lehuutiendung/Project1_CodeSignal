@@ -1,0 +1,13 @@
+std::string longestDigitsPrefix(std::string inputString) {
+    std::string ans;
+    if(isdigit(inputString[0])){
+        ans+=inputString[0];
+        for(int i=0; i<inputString.length();i++){
+            if(isdigit(inputString[i+1])){
+                ans+=inputString[i+1];
+            }
+            else break;
+        }
+    }
+    return ans;
+}

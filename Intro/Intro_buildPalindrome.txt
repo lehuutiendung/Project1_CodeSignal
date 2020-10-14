@@ -1,0 +1,19 @@
+bool is_palindrome(std::string st){
+    for(int i=0;i<st.length()/2;i++){
+        if(st[i] != st[st.length()-i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+std::string buildPalindrome(std::string st) {
+    for(int i=0;i<=st.length();i++){
+        std::string ans = st.substr(0,i) ;
+        reverse(ans.begin(),ans.end());
+        if(is_palindrome(st + ans)){
+            return st + ans;
+        }
+    }
+    return "";
+}

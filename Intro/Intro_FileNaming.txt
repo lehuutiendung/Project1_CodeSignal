@@ -1,0 +1,14 @@
+std::vector <std::string> fileNaming(std::vector<std::string> names) {
+    std::vector<string> ans;
+    std::set<string> s;
+    for(string a:names){            // foreach loop
+        int cnt = 1;
+        string arr = a;
+        while(s.find(arr) != s.end()){
+            arr = a +"("+ to_string(cnt++) +")";   
+        }
+        s.insert(arr);
+        ans.push_back(arr);
+    }
+    return ans;
+}
