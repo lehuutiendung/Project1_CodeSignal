@@ -1,0 +1,12 @@
+int avoidObstacles(std::vector<int> inputArray) {
+    for(int i=2;i<=1001;i++){
+        bool minlength = true;
+        for(int j=0;j<inputArray.size();j++){
+            if(inputArray[j]%i==0){
+                minlength = false;
+                break;
+            }
+        }
+        if(minlength) return i;
+    }
+}

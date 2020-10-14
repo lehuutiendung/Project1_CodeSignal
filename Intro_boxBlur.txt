@@ -1,0 +1,17 @@
+std::vector<std::vector<int>> boxBlur(std::vector<std::vector<int>> image) {
+    std::vector<std::vector<int>> ans;
+    for (int i = 0; i < image.size() - 2; i++){
+        std::vector<int> row; 
+        for (int j = 0; j < image[0].size() -2; j++){
+            int sum = 0; 
+            for (int x = i; x < i+3; x++){
+               for (int y = j; y < j + 3; y++){
+                   sum += image[x][y]; 
+               }
+            }
+            row.push_back(sum/9); 
+        }
+        ans.push_back(row);
+    }
+    return ans;
+}

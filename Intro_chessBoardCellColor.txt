@@ -1,0 +1,7 @@
+bool chessBoardCellColor(std::string cell1, std::string cell2) {
+    int x = abs(cell1[0] - cell2[0]);
+    int y = abs(cell1[1] - cell2[1]);
+    if((x%2 == 0 && y%2 == 0) || (x%2 != 0 && y%2 != 0)) 
+        return true;
+    return false;
+}
