@@ -1,0 +1,6 @@
+CREATE PROCEDURE contestLeaderboard()
+BEGIN
+	SELECT name 
+    FROM Leaderboard 
+    ORDER by score DESC LIMIT 3,5;
+END

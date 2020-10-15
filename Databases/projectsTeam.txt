@@ -1,0 +1,5 @@
+CREATE PROCEDURE projectsTeam()
+BEGIN
+	/* Write your SQL here. Terminate each statement with a semicolon. */
+    SELECT name FROM projectLog group by name order by name;
+END
