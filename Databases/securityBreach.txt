@@ -1,0 +1,5 @@
+CREATE PROCEDURE securityBreach()
+BEGIN
+	SELECT * FROM users
+    WHERE attribute REGEXP BINARY concat('.%', first_name, '_', second_name, '%');
+END
