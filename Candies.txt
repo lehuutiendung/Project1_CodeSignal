@@ -1,0 +1,6 @@
+int candies(int n, int m) {
+    int temp = 0;
+    temp = m/n;
+    return temp*n;
+}
+
